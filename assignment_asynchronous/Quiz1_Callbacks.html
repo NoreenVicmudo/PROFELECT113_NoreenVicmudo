@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+    <html lang="en">
+        <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <title>Callbacks</title>
+        </head>
+        <body>
+            <h1> <center>JavaScript Callbacks</center></h1>
+            <p> <center>Quiz 1 in Parallel and Distributed Computing</center></p>
+
+            <script>
+                // A function that takes a number and a callback function
+                function doubleNumber(num, callback) {
+                    const result = num * 2;           // Multiply the number by 2
+                    callback(result);                 // Call the callback function with the result
+                }
+
+                // Call the function and pass a callback that logs the result
+                    doubleNumber(5, function(result) {
+                    console.log("Callback result:", result); // Output: Callback result: 10
+                });
+            </script>
+        </body>
+    </html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+    <html lang="en">
+        <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <title>Promise</title>
+        </head>
+        <body>
+            <h1> <center>JavaScript Async/Await</center></h1>
+            <p> <center>Quiz 1 in Parallel and Distributed Computing</center></p>
+
+            <script>
+                // A function that returns a Promise 
+                function addTen(num) {
+                    return new Promise(function(resolve, reject) {
+                        const result = num + 10;     // Add 10 to the number
+                        resolve(result);             // Resolve the Promise with the result
+                    });
+                }
+
+                // An async function to use await
+                async function runAddition() {
+                    const result = await addTen(7);             // Wait for the Promise to resolve
+                    console.log("Async/Await result:", result); // Output: Async/Await result: 17
+                }
+
+                // Call the async function
+                runAddition();
+            </script>
+        </body>
+    </html>

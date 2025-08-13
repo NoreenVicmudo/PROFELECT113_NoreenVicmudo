@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+    <html lang="en">
+        <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <title>Promise</title>
+        </head>
+        <body>
+            <h1> <center>JavaScript Promises</center></h1>
+            <p> <center>Quiz 1 in Parallel and Distributed Computing</center></p>
+
+            <script>
+                // A function that returns a Promise
+                function multiplyByTwo(num) {
+                    return new Promise(function(resolve, reject) {
+                        const result = num * 2;       // Multiply the number by 2
+                        resolve(result);              // Resolve the Promise with the result
+                    });
+                }
+
+                // Use .then() to handle the resolved value
+                multiplyByTwo(6).then(function(result) {
+                    console.log("Promise result:", result); // Output: Promise result: 12
+                });
+            </script>
+        </body>
+    </html>
