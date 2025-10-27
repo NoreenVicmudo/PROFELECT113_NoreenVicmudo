@@ -49,8 +49,10 @@ const books = [
 //request query na ididisplay sa front end
                 //type of category
 app.get("/search/:category",(req, res) => {
-    const { category } = req.params; //in curly brackets so that it can be directly accessed + after search -> go to category 
-    const matches = books.filter((b) => b.category === category); //filter is a higher order function (automatic) -- filters data based on rules category based on routes
+    const { category } = req.params; 
+    //in curly brackets so that it can be directly accessed + after search -> go to category 
+    const matches = books.filter((b) => b.category === category); 
+    //filter is a higher order function (automatic) -- filters data based on rules category based on routes
     res.json({total: matches.length, matches}) //return the matches matched
 }); //json because it returns to front end 
 //http://localhost:3000/search/fantasy
@@ -78,7 +80,8 @@ app.post("/login", async (req,res) => {
     if (!user) return res.status(401).json({ error: "User not found" }); //if user exists in user array
 
     const valid = await bcrypt.compare(password, user.password);
-    if(!valid) return res.status(401).json({ error: "Wrong password" }); //if valid, compare password given and the saved encrypted password in array
+    if(!valid) return res.status(401).json({ error: "Wrong password" }); 
+    //if valid, compare password given and the saved encrypted password in array
     ///If both valid, proceed
     //Generate JWT / Token Generation      v payload - reference na naka attach            --- token based
     const token = jwt.sign({ username: user.username }, process.env.JWT_SECRET, { //header, payable, secret key
@@ -102,7 +105,7 @@ app.listen(3000, () => {
 //req - ibabato ng user
 //res - ibabato pabalik (response)
 //next - pagaganahin ang original logic or naka next in line in the queue, pwede isa or 2 or 3
-//jwt - jason web token - for authentication 
+//jwt - json web token - for authentication 
 //after verifying- it will generate token that will create jwt or token
 //it cannot be destroyed, if it is ruined, it won't run
 //everytime gagawa ng transaction, iveverify if legit ang token
